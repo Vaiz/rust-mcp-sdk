@@ -67,7 +67,7 @@ impl SseStream {
             {
                 Ok(resp) => resp,
                 Err(e) => {
-                    eprintln!("Failed to connect to SSE: {}", e);
+                    eprintln!("Failed to connect to SSE: {e}");
                     if retry_count >= self.max_retries {
                         tracing::error!("Max retries reached, giving up");
                         if let Some(tx) = endpoint_event_tx.take() {
