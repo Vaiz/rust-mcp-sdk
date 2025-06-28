@@ -1,4 +1,4 @@
-#[cfg(feature = "2025_03_26")]
+#[cfg(any(feature = "2025_03_26", not(feature = "2024_11_05")))]
 pub use rust_mcp_schema::*;
 
 #[cfg(all(feature = "2024_11_05", not(any(feature = "2025_03_26"))))]

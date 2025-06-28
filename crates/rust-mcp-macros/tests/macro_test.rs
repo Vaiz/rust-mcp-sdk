@@ -66,7 +66,7 @@ fn test_mcp_tool() {
 }
 
 #[test]
-#[cfg(feature = "2024_11_05")]
+#[cfg(all(feature = "2024_11_05", not(feature = "2025_03_26")))]
 fn test_mcp_tool() {
     #[rust_mcp_macros::mcp_tool(name = "example_tool", description = "An example tool")]
     #[derive(rust_mcp_macros::JsonSchema)]
